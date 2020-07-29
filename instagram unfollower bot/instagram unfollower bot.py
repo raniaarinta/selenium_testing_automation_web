@@ -19,8 +19,9 @@ driver.get("https://www.instagram.com/")
 time.sleep(3)
 #get input text element and input the username and passowrd
 username= driver.find_element_by_name("username")
-username.send_keys(instagram_user)
 #input instagram the username
+username.send_keys(instagram_user)
+
 
 password=driver.find_element_by_name("password")
 #input instagram the password 
@@ -37,12 +38,12 @@ time.sleep(3)
 following_xpath=driver.find_element_by_xpath('//a[contains(@href,"/following/")]')
 following_xpath.click()
 
-#click the unfollow button
+#click the following page
 time.sleep(3)
 my_follow_btn_xpath = "//button[contains(text(), 'Following')]"
 unfollow_button_xpath=driver.find_elements_by_xpath(my_follow_btn_xpath)
 unfollow="//button[contains(text(), 'Unfollow')]"
-
+#unfollow automation using for loop
 for b in unfollow_button_xpath:
     time.sleep(2) # self-throttle
     try:
